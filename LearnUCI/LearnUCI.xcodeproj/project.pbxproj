@@ -19,6 +19,9 @@
 		4157ABBA189F16AF00739348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4157ABA2189F16AE00739348 /* UIKit.framework */; };
 		4157ABC2189F16AF00739348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4157ABC0189F16AF00739348 /* InfoPlist.strings */; };
 		4157ABC4189F16AF00739348 /* LearnUCITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157ABC3189F16AF00739348 /* LearnUCITests.m */; };
+		66903EC6189F98550053808D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC1189F98550053808D /* History.m */; };
+		66903EC7189F98550053808D /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC3189F98550053808D /* LocationPoint.m */; };
+		66903EC8189F98550053808D /* TourPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC5189F98550053808D /* TourPointInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +44,19 @@
 		4157ABAA189F16AE00739348 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4157ABAC189F16AE00739348 /* LearnUCI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearnUCI-Prefix.pch"; sourceTree = "<group>"; };
 		4157ABAD189F16AE00739348 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4157ABAE189F16AE00739348 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4157ABAE189F16AE00739348 /* AppDelegate.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; tabWidth = 4; };
 		4157ABB0189F16AF00739348 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4157ABB6189F16AF00739348 /* LearnUCITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnUCITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4157ABB7189F16AF00739348 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4157ABBF189F16AF00739348 /* LearnUCITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnUCITests-Info.plist"; sourceTree = "<group>"; };
 		4157ABC1189F16AF00739348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4157ABC3189F16AF00739348 /* LearnUCITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnUCITests.m; sourceTree = "<group>"; };
+		66903EC0189F98550053808D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		66903EC1189F98550053808D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		66903EC2189F98550053808D /* LocationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPoint.h; sourceTree = "<group>"; };
+		66903EC3189F98550053808D /* LocationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPoint.m; sourceTree = "<group>"; };
+		66903EC4189F98550053808D /* TourPointInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourPointInfo.h; sourceTree = "<group>"; };
+		66903EC5189F98550053808D /* TourPointInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourPointInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +116,7 @@
 		4157ABA4189F16AE00739348 /* LearnUCI */ = {
 			isa = PBXGroup;
 			children = (
+				66903EBF189F98550053808D /* Model */,
 				4157ABAD189F16AE00739348 /* AppDelegate.h */,
 				4157ABAE189F16AE00739348 /* AppDelegate.m */,
 				4157ABB0189F16AF00739348 /* Images.xcassets */,
@@ -142,6 +152,19 @@
 				4157ABC0189F16AF00739348 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66903EBF189F98550053808D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66903EC0189F98550053808D /* History.h */,
+				66903EC1189F98550053808D /* History.m */,
+				66903EC2189F98550053808D /* LocationPoint.h */,
+				66903EC3189F98550053808D /* LocationPoint.m */,
+				66903EC4189F98550053808D /* TourPointInfo.h */,
+				66903EC5189F98550053808D /* TourPointInfo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +264,9 @@
 			files = (
 				4157ABAF189F16AE00739348 /* AppDelegate.m in Sources */,
 				4157ABAB189F16AE00739348 /* main.m in Sources */,
+				66903EC6189F98550053808D /* History.m in Sources */,
+				66903EC7189F98550053808D /* LocationPoint.m in Sources */,
+				66903EC8189F98550053808D /* TourPointInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +391,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearnUCI/LearnUCI-Prefix.pch";
 				INFOPLIST_FILE = "LearnUCI/LearnUCI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"VALID_ARCHS[sdk=iphonesimulator6.1]" = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -379,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearnUCI/LearnUCI-Prefix.pch";
 				INFOPLIST_FILE = "LearnUCI/LearnUCI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -445,6 +474,7 @@
 				4157ABC9189F16AF00739348 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4157ABCA189F16AF00739348 /* Build configuration list for PBXNativeTarget "LearnUCITests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +483,7 @@
 				4157ABCC189F16AF00739348 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
