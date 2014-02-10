@@ -19,6 +19,7 @@
 		4157ABBA189F16AF00739348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4157ABA2189F16AE00739348 /* UIKit.framework */; };
 		4157ABC2189F16AF00739348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4157ABC0189F16AF00739348 /* InfoPlist.strings */; };
 		4157ABC4189F16AF00739348 /* LearnUCITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157ABC3189F16AF00739348 /* LearnUCITests.m */; };
+		668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 668BDF8918A898B500228375 /* NetworkDispatcher.m */; };
 		66903EC6189F98550053808D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC1189F98550053808D /* History.m */; };
 		66903EC7189F98550053808D /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC3189F98550053808D /* LocationPoint.m */; };
 		66903EC8189F98550053808D /* TourPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC5189F98550053808D /* TourPointInfo.m */; };
@@ -51,6 +52,8 @@
 		4157ABBF189F16AF00739348 /* LearnUCITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnUCITests-Info.plist"; sourceTree = "<group>"; };
 		4157ABC1189F16AF00739348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4157ABC3189F16AF00739348 /* LearnUCITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnUCITests.m; sourceTree = "<group>"; };
+		668BDF8818A898B500228375 /* NetworkDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDispatcher.h; sourceTree = "<group>"; };
+		668BDF8918A898B500228375 /* NetworkDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDispatcher.m; sourceTree = "<group>"; };
 		66903EC0189F98550053808D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		66903EC1189F98550053808D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		66903EC2189F98550053808D /* LocationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPoint.h; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		4157ABA4189F16AE00739348 /* LearnUCI */ = {
 			isa = PBXGroup;
 			children = (
+				668BDF8718A898B500228375 /* NetworkDisptacher */,
 				66903EBF189F98550053808D /* Model */,
 				4157ABAD189F16AE00739348 /* AppDelegate.h */,
 				4157ABAE189F16AE00739348 /* AppDelegate.m */,
@@ -152,6 +156,15 @@
 				4157ABC0189F16AF00739348 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		668BDF8718A898B500228375 /* NetworkDisptacher */ = {
+			isa = PBXGroup;
+			children = (
+				668BDF8818A898B500228375 /* NetworkDispatcher.h */,
+				668BDF8918A898B500228375 /* NetworkDispatcher.m */,
+			);
+			path = NetworkDisptacher;
 			sourceTree = "<group>";
 		};
 		66903EBF189F98550053808D /* Model */ = {
@@ -267,6 +280,7 @@
 				66903EC6189F98550053808D /* History.m in Sources */,
 				66903EC7189F98550053808D /* LocationPoint.m in Sources */,
 				66903EC8189F98550053808D /* TourPointInfo.m in Sources */,
+				668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
