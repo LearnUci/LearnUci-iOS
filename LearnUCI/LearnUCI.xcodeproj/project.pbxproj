@@ -19,10 +19,16 @@
 		4157ABBA189F16AF00739348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4157ABA2189F16AE00739348 /* UIKit.framework */; };
 		4157ABC2189F16AF00739348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4157ABC0189F16AF00739348 /* InfoPlist.strings */; };
 		4157ABC4189F16AF00739348 /* LearnUCITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157ABC3189F16AF00739348 /* LearnUCITests.m */; };
+		668A115918B98D7E00EC6351 /* SearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115818B98D7E00EC6351 /* SearchResultsController.m */; };
+		668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115B18B98FED00EC6351 /* QueryHandler.m */; };
+		668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115E18B99A3400EC6351 /* ProximityViewController.m */; };
+		668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A116118B99A4C00EC6351 /* HistoryViewController.m */; };
 		668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 668BDF8918A898B500228375 /* NetworkDispatcher.m */; };
 		66903EC6189F98550053808D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC1189F98550053808D /* History.m */; };
 		66903EC7189F98550053808D /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC3189F98550053808D /* LocationPoint.m */; };
 		66903EC8189F98550053808D /* TourPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC5189F98550053808D /* TourPointInfo.m */; };
+		6690AF0618B84E4200956B10 /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6690AF0518B84E4200956B10 /* TourViewController.m */; };
+		6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692866518A9B36E00313C95 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,14 @@
 		4157ABBF189F16AF00739348 /* LearnUCITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnUCITests-Info.plist"; sourceTree = "<group>"; };
 		4157ABC1189F16AF00739348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4157ABC3189F16AF00739348 /* LearnUCITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnUCITests.m; sourceTree = "<group>"; };
+		668A115718B98D7E00EC6351 /* SearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsController.h; path = ViewControllers/SearchResultsController.h; sourceTree = "<group>"; };
+		668A115818B98D7E00EC6351 /* SearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsController.m; path = ViewControllers/SearchResultsController.m; sourceTree = "<group>"; };
+		668A115A18B98FED00EC6351 /* QueryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryHandler.h; sourceTree = "<group>"; };
+		668A115B18B98FED00EC6351 /* QueryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryHandler.m; sourceTree = "<group>"; };
+		668A115D18B99A3300EC6351 /* ProximityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProximityViewController.h; path = ViewControllers/ProximityViewController.h; sourceTree = "<group>"; };
+		668A115E18B99A3400EC6351 /* ProximityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProximityViewController.m; path = ViewControllers/ProximityViewController.m; sourceTree = "<group>"; };
+		668A116018B99A4C00EC6351 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = ViewControllers/HistoryViewController.h; sourceTree = "<group>"; };
+		668A116118B99A4C00EC6351 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = ViewControllers/HistoryViewController.m; sourceTree = "<group>"; };
 		668BDF8818A898B500228375 /* NetworkDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDispatcher.h; sourceTree = "<group>"; };
 		668BDF8918A898B500228375 /* NetworkDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDispatcher.m; sourceTree = "<group>"; };
 		66903EC0189F98550053808D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
@@ -60,6 +74,9 @@
 		66903EC3189F98550053808D /* LocationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPoint.m; sourceTree = "<group>"; };
 		66903EC4189F98550053808D /* TourPointInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourPointInfo.h; sourceTree = "<group>"; };
 		66903EC5189F98550053808D /* TourPointInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourPointInfo.m; sourceTree = "<group>"; };
+		6690AF0418B84E4200956B10 /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TourViewController.h; path = ViewControllers/TourViewController.h; sourceTree = "<group>"; };
+		6690AF0518B84E4200956B10 /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TourViewController.m; path = ViewControllers/TourViewController.m; sourceTree = "<group>"; };
+		6692866518A9B36E00313C95 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +136,14 @@
 		4157ABA4189F16AE00739348 /* LearnUCI */ = {
 			isa = PBXGroup;
 			children = (
+				6690AF0018B84C4900956B10 /* ViewControllers */,
 				668BDF8718A898B500228375 /* NetworkDisptacher */,
 				66903EBF189F98550053808D /* Model */,
 				4157ABAD189F16AE00739348 /* AppDelegate.h */,
 				4157ABAE189F16AE00739348 /* AppDelegate.m */,
 				4157ABB0189F16AF00739348 /* Images.xcassets */,
 				4157ABA5189F16AE00739348 /* Supporting Files */,
+				6692866518A9B36E00313C95 /* Storyboard.storyboard */,
 			);
 			path = LearnUCI;
 			sourceTree = "<group>";
@@ -147,7 +166,7 @@
 				4157ABBE189F16AF00739348 /* Supporting Files */,
 			);
 			path = LearnUCITests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		4157ABBE189F16AF00739348 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -163,6 +182,8 @@
 			children = (
 				668BDF8818A898B500228375 /* NetworkDispatcher.h */,
 				668BDF8918A898B500228375 /* NetworkDispatcher.m */,
+				668A115A18B98FED00EC6351 /* QueryHandler.h */,
+				668A115B18B98FED00EC6351 /* QueryHandler.m */,
 			);
 			path = NetworkDisptacher;
 			sourceTree = "<group>";
@@ -178,6 +199,21 @@
 				66903EC5189F98550053808D /* TourPointInfo.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6690AF0018B84C4900956B10 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6690AF0418B84E4200956B10 /* TourViewController.h */,
+				6690AF0518B84E4200956B10 /* TourViewController.m */,
+				668A115718B98D7E00EC6351 /* SearchResultsController.h */,
+				668A115818B98D7E00EC6351 /* SearchResultsController.m */,
+				668A115D18B99A3300EC6351 /* ProximityViewController.h */,
+				668A115E18B99A3400EC6351 /* ProximityViewController.m */,
+				668A116018B99A4C00EC6351 /* HistoryViewController.h */,
+				668A116118B99A4C00EC6351 /* HistoryViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +293,7 @@
 			files = (
 				4157ABA9189F16AE00739348 /* InfoPlist.strings in Resources */,
 				4157ABB1189F16AF00739348 /* Images.xcassets in Resources */,
+				6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +318,11 @@
 				66903EC7189F98550053808D /* LocationPoint.m in Sources */,
 				66903EC8189F98550053808D /* TourPointInfo.m in Sources */,
 				668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */,
+				6690AF0618B84E4200956B10 /* TourViewController.m in Sources */,
+				668A115918B98D7E00EC6351 /* SearchResultsController.m in Sources */,
+				668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */,
+				668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */,
+				668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

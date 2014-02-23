@@ -17,8 +17,6 @@
     [request setURL: [NSURL URLWithString:paramUrl]];
     [request setHTTPMethod:@"GET"];
     
-    NSLog(@"%@\n", paramUrl);
-    
     NSHTTPURLResponse* response = nil;
     NSError* error = [[NSError alloc] init];
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
