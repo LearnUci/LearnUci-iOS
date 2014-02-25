@@ -1,20 +1,21 @@
 //
-//  TourViewController.m
+//  SearchViewController.m
 //  LearnUCI
 //
-//  Created by Yuhao Ma on 2/21/14.
+//  Created by Yuhao Ma on 2/24/14.
 //  Copyright (c) 2014 gbc. All rights reserved.
 //
 
+#import "LocationPoint.h"
 #import "LocationCell.h"
-#import "TourViewController.h"
-#import "TourPointInfo.h"
+#import "SearchViewController.h"
 #import "QueryHandler.h"
 
-@interface TourViewController ()
+@interface SearchViewController ()
+
 @end
 
-@implementation TourViewController
+@implementation SearchViewController
 
 UIActivityIndicatorView* loading;
 
@@ -22,6 +23,7 @@ UIActivityIndicatorView* loading;
 {
     self = [super initWithStyle:style];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -29,25 +31,12 @@ UIActivityIndicatorView* loading;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loading.center = CGPointMake(160, 240);
-    loading.hidesWhenStopped = YES;
-    [self.view addSubview:loading];
-    [loading startAnimating];
-    [NSThread detachNewThreadSelector:@selector(asyncLoad) toTarget:self withObject:nil];
-    
-    //self.values = [QueryHandler GetTours];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void) asyncLoad {
-    self.values = [QueryHandler GetTours];
-    loading.hidden = YES;
-    [((UITableView*) self.view) reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,19 +54,18 @@ UIActivityIndicatorView* loading;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.values == nil) {
-        return 0;
-    } else {
-        return [self.values count];
+    if (self.arr != nil) {
+        return [self.arr count];
     }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
-    if (self.values != nil) {
-        TourPointInfo* tourObj = [self.values objectAtIndex:[indexPath row]];
-        [LocationCell SetLocationCell:cell WithLocation:[tourObj name] AndImage: [tourObj image]];
+    if (self.arr != nil) {
+        LocationPoint* point = [self.arr objectAtIndex:indexPath.row];
+        [LocationCell SetLocationCell:cell WithLocation:[point name] AndImage: [point image]];
     }
     return cell;
 }
@@ -133,5 +121,37 @@ UIActivityIndicatorView* loading;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    return NO;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    return NO;
+}
+
+- (void) asyncLoad:(id)query {
+    self.arr = [QueryHandler Search:query];
+    loading.hidden = YES;
+    [((UITableView*) self.view) reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    loading.center = CGPointMake(160, 240);
+    loading.hidesWhenStopped = YES;
+    [self.view addSubview:loading];
+    [loading startAnimating];
+    [NSThread detachNewThreadSelector:@selector(asyncLoad:) toTarget:self withObject:searchBar.text];
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.arr = nil;
+    [((UITableView*) self.view) reloadData];
+}
+
+@synthesize arr = _arr;
+@synthesize searchBar = _searchBar;
 
 @end

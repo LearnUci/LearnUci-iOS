@@ -19,10 +19,14 @@
 		4157ABBA189F16AF00739348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4157ABA2189F16AE00739348 /* UIKit.framework */; };
 		4157ABC2189F16AF00739348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4157ABC0189F16AF00739348 /* InfoPlist.strings */; };
 		4157ABC4189F16AF00739348 /* LearnUCITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157ABC3189F16AF00739348 /* LearnUCITests.m */; };
-		668A115918B98D7E00EC6351 /* SearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115818B98D7E00EC6351 /* SearchResultsController.m */; };
+		6686A11318BC6F9600CFE2F4 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11218BC6F9600CFE2F4 /* LocationCell.m */; };
+		6686A11918BC729000CFE2F4 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11818BC729000CFE2F4 /* Base64.m */; };
+		6686A11C18BC76AB00CFE2F4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */; };
 		668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115B18B98FED00EC6351 /* QueryHandler.m */; };
 		668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115E18B99A3400EC6351 /* ProximityViewController.m */; };
 		668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A116118B99A4C00EC6351 /* HistoryViewController.m */; };
+		668A116418B9ACA100EC6351 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668A116318B9ACA100EC6351 /* CoreLocation.framework */; };
+		668A116818B9B04100EC6351 /* LocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A116718B9B04100EC6351 /* LocationProvider.m */; };
 		668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 668BDF8918A898B500228375 /* NetworkDispatcher.m */; };
 		66903EC6189F98550053808D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC1189F98550053808D /* History.m */; };
 		66903EC7189F98550053808D /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC3189F98550053808D /* LocationPoint.m */; };
@@ -58,14 +62,21 @@
 		4157ABBF189F16AF00739348 /* LearnUCITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnUCITests-Info.plist"; sourceTree = "<group>"; };
 		4157ABC1189F16AF00739348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4157ABC3189F16AF00739348 /* LearnUCITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnUCITests.m; sourceTree = "<group>"; };
-		668A115718B98D7E00EC6351 /* SearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsController.h; path = ViewControllers/SearchResultsController.h; sourceTree = "<group>"; };
-		668A115818B98D7E00EC6351 /* SearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsController.m; path = ViewControllers/SearchResultsController.m; sourceTree = "<group>"; };
+		6686A11118BC6F9600CFE2F4 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationCell.h; path = ViewControllers/LocationCell.h; sourceTree = "<group>"; };
+		6686A11218BC6F9600CFE2F4 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationCell.m; path = ViewControllers/LocationCell.m; sourceTree = "<group>"; };
+		6686A11718BC729000CFE2F4 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		6686A11818BC729000CFE2F4 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		6686A11A18BC76AA00CFE2F4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ViewControllers/SearchViewController.h; sourceTree = "<group>"; };
+		6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ViewControllers/SearchViewController.m; sourceTree = "<group>"; };
 		668A115A18B98FED00EC6351 /* QueryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryHandler.h; sourceTree = "<group>"; };
 		668A115B18B98FED00EC6351 /* QueryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryHandler.m; sourceTree = "<group>"; };
 		668A115D18B99A3300EC6351 /* ProximityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProximityViewController.h; path = ViewControllers/ProximityViewController.h; sourceTree = "<group>"; };
 		668A115E18B99A3400EC6351 /* ProximityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProximityViewController.m; path = ViewControllers/ProximityViewController.m; sourceTree = "<group>"; };
 		668A116018B99A4C00EC6351 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = ViewControllers/HistoryViewController.h; sourceTree = "<group>"; };
 		668A116118B99A4C00EC6351 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = ViewControllers/HistoryViewController.m; sourceTree = "<group>"; };
+		668A116318B9ACA100EC6351 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		668A116618B9B04100EC6351 /* LocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationProvider.h; path = LocationProvider/LocationProvider.h; sourceTree = "<group>"; };
+		668A116718B9B04100EC6351 /* LocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationProvider.m; path = LocationProvider/LocationProvider.m; sourceTree = "<group>"; };
 		668BDF8818A898B500228375 /* NetworkDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDispatcher.h; sourceTree = "<group>"; };
 		668BDF8918A898B500228375 /* NetworkDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDispatcher.m; sourceTree = "<group>"; };
 		66903EC0189F98550053808D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668A116418B9ACA100EC6351 /* CoreLocation.framework in Frameworks */,
 				4157ABA1189F16AE00739348 /* CoreGraphics.framework in Frameworks */,
 				4157ABA3189F16AE00739348 /* UIKit.framework in Frameworks */,
 				4157AB9F189F16AE00739348 /* Foundation.framework in Frameworks */,
@@ -106,6 +118,7 @@
 		4157AB92189F16AE00739348 = {
 			isa = PBXGroup;
 			children = (
+				668A116318B9ACA100EC6351 /* CoreLocation.framework */,
 				4157ABA4189F16AE00739348 /* LearnUCI */,
 				4157ABBD189F16AF00739348 /* LearnUCITests */,
 				4157AB9D189F16AE00739348 /* Frameworks */,
@@ -136,6 +149,7 @@
 		4157ABA4189F16AE00739348 /* LearnUCI */ = {
 			isa = PBXGroup;
 			children = (
+				668A116518B9B01C00EC6351 /* LocationProvider */,
 				6690AF0018B84C4900956B10 /* ViewControllers */,
 				668BDF8718A898B500228375 /* NetworkDisptacher */,
 				66903EBF189F98550053808D /* Model */,
@@ -177,6 +191,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		668A116518B9B01C00EC6351 /* LocationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				668A116618B9B04100EC6351 /* LocationProvider.h */,
+				668A116718B9B04100EC6351 /* LocationProvider.m */,
+			);
+			name = LocationProvider;
+			sourceTree = "<group>";
+		};
 		668BDF8718A898B500228375 /* NetworkDisptacher */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +220,8 @@
 				66903EC3189F98550053808D /* LocationPoint.m */,
 				66903EC4189F98550053808D /* TourPointInfo.h */,
 				66903EC5189F98550053808D /* TourPointInfo.m */,
+				6686A11718BC729000CFE2F4 /* Base64.h */,
+				6686A11818BC729000CFE2F4 /* Base64.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,12 +231,14 @@
 			children = (
 				6690AF0418B84E4200956B10 /* TourViewController.h */,
 				6690AF0518B84E4200956B10 /* TourViewController.m */,
-				668A115718B98D7E00EC6351 /* SearchResultsController.h */,
-				668A115818B98D7E00EC6351 /* SearchResultsController.m */,
 				668A115D18B99A3300EC6351 /* ProximityViewController.h */,
 				668A115E18B99A3400EC6351 /* ProximityViewController.m */,
 				668A116018B99A4C00EC6351 /* HistoryViewController.h */,
 				668A116118B99A4C00EC6351 /* HistoryViewController.m */,
+				6686A11118BC6F9600CFE2F4 /* LocationCell.h */,
+				6686A11218BC6F9600CFE2F4 /* LocationCell.m */,
+				6686A11A18BC76AA00CFE2F4 /* SearchViewController.h */,
+				6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -319,10 +346,13 @@
 				66903EC8189F98550053808D /* TourPointInfo.m in Sources */,
 				668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */,
 				6690AF0618B84E4200956B10 /* TourViewController.m in Sources */,
-				668A115918B98D7E00EC6351 /* SearchResultsController.m in Sources */,
 				668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */,
 				668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */,
 				668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */,
+				668A116818B9B04100EC6351 /* LocationProvider.m in Sources */,
+				6686A11318BC6F9600CFE2F4 /* LocationCell.m in Sources */,
+				6686A11918BC729000CFE2F4 /* Base64.m in Sources */,
+				6686A11C18BC76AB00CFE2F4 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

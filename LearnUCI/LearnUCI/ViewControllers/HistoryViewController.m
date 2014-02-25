@@ -54,7 +54,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
     return cell;
 }
 

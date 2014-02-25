@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "LocationPoint.h"
 
+#import "Base64.h"
+
 @implementation LocationPoint { }
 
 - (id)initWithJson:(NSDictionary*)obj {
@@ -11,9 +13,9 @@
     _name = [obj objectForKey:@"name"];
     _abbreviation = [obj objectForKey:@"abbr"];
     _type = [obj objectForKey:@"type"];
-    _locationPointId = [[obj objectForKey:@"type"] longValue];
+    _locationPointId = [[obj objectForKey:@"id"] longValue];
     _description = [obj objectForKey:@"desc"];
-    _image = [obj objectForKey:@"img"];
+    _image = [Base64 base64DataFromString: [obj objectForKey:@"img"]];
     _latitude = (0.120246f * tempLat) + (-0.0460953f * tempLng) + 24.1819f;
     _longitude = (0.0693213f * tempLat) + (0.118713f * tempLng) - 106.18865f;
   }

@@ -18,7 +18,7 @@
 @implementation QueryHandler
 NSString* PATH = @"http://learnuci.appspot.com/query";
 NSString* ACTION_TOUR = @"TOURS";
-NSString* ACTION_SEARCH = @"QUERY";
+NSString* ACTION_SEARCH = @"SEARCH";
 NSString* ACTION_PROXIMITY = @"PROXIMITY";
 
 + (NSArray*) ToJsonObject:(NSString*) str {
@@ -51,8 +51,8 @@ NSString* ACTION_PROXIMITY = @"PROXIMITY";
     return res;
 }
 
-+ (NSArray*) ProximityOfLat:(NSString*)lat Lng:(NSString*)lng {
-    NSString* jsonString = [NSString stringWithFormat:@"{\"latitude\"%@,\"longitude\":%@}}", lat, lng];
++ (NSArray*) ProximityOfLat:(double)lat Lng:(double)lng {
+    NSString* jsonString = [NSString stringWithFormat:@"{\"latitude\":%f,\"longitude\":%f}", lat, lng];
     NSMutableArray* res = [NSMutableArray array];
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
     [dict setValue:ACTION_PROXIMITY forKey:@"action"];

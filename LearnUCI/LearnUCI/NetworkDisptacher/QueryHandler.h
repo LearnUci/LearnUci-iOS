@@ -11,5 +11,5 @@
 @interface QueryHandler : NSObject { }
 + (NSArray*) GetTours;
 + (NSArray*) Search:(NSString*)query;
-+ (NSArray*) ProximityOfLat:(NSString*)lat Lng:(NSString*)lng;
++ (NSArray*) ProximityOfLat:(double)lat Lng:(double)lng;
 @end

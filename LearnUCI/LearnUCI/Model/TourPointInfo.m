@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "TourPointInfo.h"
 
+#import "Base64.h"
 @implementation TourPointInfo {
   NSArray* _locIds;
 }
@@ -10,7 +11,7 @@
     if (self) {
         _name = [obj objectForKey:@"name"];
         _description = [obj objectForKey:@"desc"];
-        _image = [obj objectForKey:@"img"];
+        _image = [Base64 base64DataFromString: [obj objectForKey:@"img"]];
         _tourPointId = [[obj objectForKey:@"id"] longValue];
         _locationPoints = [obj objectForKey:@"points"];
         _locIds = [NSArray array];

@@ -4,23 +4,50 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - What's near me-->
+        <!--Proximity View Controller - What's near me-->
         <scene sceneID="vgS-O6-aVg">
             <objects>
-                <tableViewController id="Utd-vx-MxE" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mwc-QI-zKj">
+                <tableViewController id="Utd-vx-MxE" customClass="ProximityViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="43" sectionHeaderHeight="22" sectionFooterHeight="22" id="mwc-QI-zKj">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProximityCell" id="KlD-1f-AQo">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" id="1ni-Xm-GTU" customClass="LocationCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z09-CV-sQC">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="pNE-T5-Jyn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgI-OX-Kpn">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="YRO-U1-4Uu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="z09-CV-sQC" firstAttribute="top" secondItem="1ni-Xm-GTU" secondAttribute="top" type="default" id="8pT-O1-ojN"/>
+                                    <constraint firstItem="z09-CV-sQC" firstAttribute="leading" secondItem="1ni-Xm-GTU" secondAttribute="leading" type="default" id="Y94-zJ-kzq"/>
+                                    <constraint firstItem="FgI-OX-Kpn" firstAttribute="centerY" secondItem="z09-CV-sQC" secondAttribute="centerY" type="default" id="crh-PX-2gy"/>
+                                    <constraint firstItem="FgI-OX-Kpn" firstAttribute="leading" secondItem="z09-CV-sQC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lod-IV-1Zz"/>
+                                    <constraint firstItem="z09-CV-sQC" firstAttribute="centerY" secondItem="1ni-Xm-GTU" secondAttribute="centerY" type="default" id="xHo-fW-luy"/>
+                                    <constraint firstAttribute="trailing" secondItem="FgI-OX-Kpn" secondAttribute="trailing" constant="20" type="default" id="xtv-uL-ZbI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="z09-CV-sQC" id="ITn-w1-qpr"/>
+                                    <outlet property="location" destination="FgI-OX-Kpn" id="BQy-qb-DzZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,7 +58,7 @@
                     <navigationItem key="navigationItem" title="What's near me" id="aPp-M2-ybB">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="9eW-Zk-1Uc">
                             <connections>
-                                <segue destination="RzS-cN-QOh" kind="push" id="6dN-zQ-3qD"/>
+                                <segue destination="qcG-Sp-4xM" kind="push" id="uFV-4Z-cf1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -40,73 +67,118 @@
             </objects>
             <point key="canvasLocation" x="342" y="-291"/>
         </scene>
-        <!--Table View Controller - Search-->
-        <scene sceneID="0aY-Oi-U23">
+        <!--Search View Controller - Search-->
+        <scene sceneID="oem-xD-jmo">
             <objects>
-                <tableViewController id="RzS-cN-QOh" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wFG-oe-ddb">
+                <tableViewController id="qcG-Sp-4xM" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KWT-RH-i8K">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="cca-ji-eHO">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="v28-Ua-WCK">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="RzS-cN-QOh" id="PaD-fe-7Ty"/>
+                                <outlet property="delegate" destination="qcG-Sp-4xM" id="VQd-Qm-Ssw"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SeachCell" id="VmC-8e-1xy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" id="u0J-tG-0LE" customClass="LocationCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-rK-zyQ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="GBL-4I-s7V"/>
+                                                <constraint firstAttribute="width" constant="64" id="PiJ-ee-FrA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSZ-MC-a14">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="cqm-6i-f07"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="uSZ-MC-a14" firstAttribute="leading" secondItem="bXO-rK-zyQ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0sm-xy-grW"/>
+                                    <constraint firstItem="bXO-rK-zyQ" firstAttribute="leading" secondItem="u0J-tG-0LE" secondAttribute="leading" type="default" id="JTt-Yr-pzs"/>
+                                    <constraint firstAttribute="trailing" secondItem="uSZ-MC-a14" secondAttribute="trailing" constant="20" type="default" id="bPH-s0-xtc"/>
+                                    <constraint firstItem="uSZ-MC-a14" firstAttribute="centerY" secondItem="bXO-rK-zyQ" secondAttribute="centerY" type="default" id="nyU-Ed-RfJ"/>
+                                    <constraint firstItem="bXO-rK-zyQ" firstAttribute="top" secondItem="u0J-tG-0LE" secondAttribute="top" type="default" id="yeV-sf-wpC"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="bXO-rK-zyQ" id="XzA-1t-15d"/>
+                                    <outlet property="location" destination="uSZ-MC-a14" id="Wgb-De-jXy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="RzS-cN-QOh" id="rcZ-51-hsL"/>
-                            <outlet property="delegate" destination="RzS-cN-QOh" id="Z2n-5e-hCV"/>
+                            <outlet property="dataSource" destination="qcG-Sp-4xM" id="5aE-EO-raQ"/>
+                            <outlet property="delegate" destination="qcG-Sp-4xM" id="LBU-Xn-at7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="tXm-tc-Sg5"/>
+                    <navigationItem key="navigationItem" title="Search" id="h67-O7-bX7"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="YR4-YD-zTO" id="hNn-pX-lYM"/>
+                        <outlet property="searchBar" destination="v28-Ua-WCK" id="Ect-TL-uRY"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PcC-fE-s9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="YR4-YD-zTO" customClass="SearchResultsController">
-                    <connections>
-                        <outlet property="delegate" destination="RzS-cN-QOh" id="Wjm-sw-3bf"/>
-                        <outlet property="searchBar" destination="cca-ji-eHO" id="Q98-YT-doo"/>
-                        <outlet property="searchContentsController" destination="RzS-cN-QOh" id="ZcD-80-CWy"/>
-                        <outlet property="searchResultsDataSource" destination="RzS-cN-QOh" id="Ukm-2t-V3y"/>
-                        <outlet property="searchResultsDelegate" destination="RzS-cN-QOh" id="xwO-it-TDF"/>
-                    </connections>
-                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGE-ol-Ksk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-291"/>
+            <point key="canvasLocation" x="996" y="-285"/>
         </scene>
-        <!--Table View Controller - History-->
+        <!--History View Controller - History-->
         <scene sceneID="yEb-4Y-teb">
             <objects>
-                <tableViewController id="yeM-je-Vww" sceneMemberID="viewController">
+                <tableViewController id="yeM-je-Vww" customClass="HistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1bn-JX-39E">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="0wa-tG-ZaW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" id="95l-aI-mXk" customClass="LocationCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-UM-xer">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="4kd-US-iF9"/>
+                                                <constraint firstAttribute="height" constant="42" id="rwo-UR-6iA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0w-27-Jgw">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="DqV-0J-HWc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="Y0w-27-Jgw" firstAttribute="leading" secondItem="Vrt-UM-xer" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5yf-om-LIK"/>
+                                    <constraint firstItem="Y0w-27-Jgw" firstAttribute="centerY" secondItem="Vrt-UM-xer" secondAttribute="centerY" type="default" id="DFa-8G-xea"/>
+                                    <constraint firstItem="Vrt-UM-xer" firstAttribute="leading" secondItem="95l-aI-mXk" secondAttribute="leading" type="default" id="LFe-l6-eaP"/>
+                                    <constraint firstItem="Vrt-UM-xer" firstAttribute="top" secondItem="95l-aI-mXk" secondAttribute="top" type="default" id="TEZ-K5-YvN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0w-27-Jgw" secondAttribute="trailing" constant="20" type="default" id="gQz-RH-qBW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="Vrt-UM-xer" id="KTg-OJ-XcU"/>
+                                    <outlet property="location" destination="Y0w-27-Jgw" id="vQc-I1-5jV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -117,7 +189,7 @@
                     <navigationItem key="navigationItem" title="History" id="jaW-9c-dMl">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="SBJ-rC-DLF">
                             <connections>
-                                <segue destination="RzS-cN-QOh" kind="push" id="pam-yh-eqM"/>
+                                <segue destination="qcG-Sp-4xM" kind="push" id="1s7-P3-37Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -130,19 +202,46 @@
         <scene sceneID="xcQ-9f-6eC">
             <objects>
                 <tableViewController id="uZn-FZ-aOu" customClass="TourViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nzk-3Y-Xfc">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="43" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nzk-3Y-Xfc">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TourCell" id="iXA-sO-EFx">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" id="9ew-af-6a7" customClass="LocationCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-lu-3bj">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="6hL-ta-tfU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-YF-1Zf">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="JS1-3r-X9a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="ePD-YF-1Zf" firstAttribute="centerY" secondItem="S1Y-lu-3bj" secondAttribute="centerY" type="default" id="5DC-aL-4cH"/>
+                                    <constraint firstAttribute="trailing" secondItem="ePD-YF-1Zf" secondAttribute="trailing" constant="20" type="default" id="8Ex-wZ-RTb"/>
+                                    <constraint firstItem="S1Y-lu-3bj" firstAttribute="top" secondItem="9ew-af-6a7" secondAttribute="top" type="default" id="HBe-bS-n6V"/>
+                                    <constraint firstItem="S1Y-lu-3bj" firstAttribute="leading" secondItem="9ew-af-6a7" secondAttribute="leading" type="default" id="UVt-aP-HDb"/>
+                                    <constraint firstItem="ePD-YF-1Zf" firstAttribute="leading" secondItem="S1Y-lu-3bj" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="h7U-v0-Ado"/>
+                                    <constraint firstItem="S1Y-lu-3bj" firstAttribute="centerY" secondItem="9ew-af-6a7" secondAttribute="centerY" type="default" id="o6v-cF-G3s"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="S1Y-lu-3bj" id="Ej1-6d-t28"/>
+                                    <outlet property="location" destination="ePD-YF-1Zf" id="XPC-2d-SjX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,7 +252,7 @@
                     <navigationItem key="navigationItem" title="Tours" id="Ya4-Tf-3Vc">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="atG-Ox-jO2">
                             <connections>
-                                <segue destination="RzS-cN-QOh" kind="push" id="dO7-nY-zts"/>
+                                <segue destination="qcG-Sp-4xM" kind="push" id="Wtc-Ge-asm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,7 +325,7 @@
                     <navigationItem key="navigationItem" title="Learn UCI" id="A44-zS-HkF">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="BFP-A5-VzB">
                             <connections>
-                                <segue destination="RzS-cN-QOh" kind="push" id="06K-z7-vta"/>
+                                <segue destination="qcG-Sp-4xM" kind="push" id="sbu-bp-U19"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -266,11 +365,27 @@
         </scene>
     </scenes>
     <classes>
+        <class className="HistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+        </class>
+        <class className="LocationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="location" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="SearchResultsController" superclassName="UISearchDisplayController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultsController.h"/>
+        <class className="ProximityViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProximityViewController.h"/>
+        </class>
+        <class className="SearchViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
         <class className="TourViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TourViewController.h"/>
@@ -282,6 +397,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pam-yh-eqM"/>
+        <segue reference="uFV-4Z-cf1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,7 +6,12 @@
 //  Copyright (c) 2014 gbc. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+#import "LocationPoint.h"
+#import "LocationCell.h"
+#import "QueryHandler.h"
 #import "ProximityViewController.h"
+#import "LocationProvider.h"
 
 @interface ProximityViewController ()
 
@@ -14,11 +19,12 @@
 
 @implementation ProximityViewController
 
+UIActivityIndicatorView* loading;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,12 +32,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [[LocationProvider instance] AskStartLocationManager];
+    loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    loading.center = CGPointMake(160, 240);
+    loading.hidesWhenStopped = YES;
+    [self.view addSubview:loading];
+    [loading startAnimating];
+    [NSThread detachNewThreadSelector:@selector(asyncLoad) toTarget:self withObject:nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void) asyncLoad {
+    while (![LocationProvider instance].loaded) {
+        [NSThread sleepForTimeInterval: .5];
+    }
+    CLLocationCoordinate2D coord = [LocationProvider instance].coordinate;
+    self.values = [QueryHandler ProximityOfLat:coord.latitude Lng:coord.longitude];
+    loading.hidden = YES;
+    [((UITableView*) self.view) reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,12 +71,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.values != nil) {
+        return self.values.count;
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProximityCell"];
+    LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
+    if (self.values != nil) {
+        LocationPoint* point = [self.values objectAtIndex:indexPath.row];
+        [LocationCell SetLocationCell:cell WithLocation:[point name] AndImage:[point image]];
+    }
     return cell;
 }
 
@@ -109,5 +138,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
 
 @end
