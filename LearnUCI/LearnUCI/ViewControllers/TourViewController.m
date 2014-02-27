@@ -10,6 +10,7 @@
 #import "TourViewController.h"
 #import "TourPointInfo.h"
 #import "QueryHandler.h"
+#import "PersistentHistory.h"
 
 @interface TourViewController ()
 @end
@@ -29,8 +30,9 @@ UIActivityIndicatorView* loading;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGRect rect = [self.view frame];
     loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loading.center = CGPointMake(160, 240);
+    loading.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     loading.hidesWhenStopped = YES;
     [self.view addSubview:loading];
     [loading startAnimating];
@@ -47,6 +49,7 @@ UIActivityIndicatorView* loading;
 - (void) asyncLoad {
     self.values = [QueryHandler GetTours];
     loading.hidden = YES;
+    [loading removeFromSuperview];
     [((UITableView*) self.view) reloadData];
 }
 
@@ -125,6 +128,8 @@ UIActivityIndicatorView* loading;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    TourPointInfo* tour = [self.values objectAtIndex:indexPath.row];
+    [PersistentHistory addHistoryWithType:[PersistentHistory Tour] Keyword:tour.name Id: tour.tourPointId Timestamp:[[NSDate date] timeIntervalSince1970]];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

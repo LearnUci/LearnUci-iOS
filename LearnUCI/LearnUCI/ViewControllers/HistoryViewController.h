@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HistoryViewController : UITableViewController
-
+@property (nonatomic, strong) NSArray* values;
 @end

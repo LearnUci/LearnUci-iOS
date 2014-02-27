@@ -12,6 +12,6 @@
 @property (nonatomic, weak) IBOutlet UILabel* location;
 @property (nonatomic, weak) IBOutlet UIImageView* image;
 
-+ (void)SetLocationCell:(id)cell WithLocation:(NSString*)location AndImage:(NSData*)img;
++ (void)SetLocationCell:(LocationCell*)cell WithLocation:(NSString*)location AndImage:(NSData*)img;
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "HistoryViewController.h"
+#import "History.h"
+#import "HistoryCell.h"
+#import "PersistentHistory.h"
 
 @interface HistoryViewController ()
 
@@ -26,12 +29,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.values = [PersistentHistory getHistory];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.values = [PersistentHistory getHistory];
+    [((UITableView*)self.view) reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,12 +58,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.values.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
+    HistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
+    History* history = [self.values objectAtIndex:indexPath.row];
+    [HistoryCell SetHistoryCell:cell WithType:history.type Keyword:history.keyword AndTimeStamp:history.timestamp];
     return cell;
 }
 
@@ -101,6 +112,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /** 
+     * Push something
+     */
+    History* item = [self.values objectAtIndex:indexPath.row];
+    NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    long hId = [[formatter numberFromString:item.historyId] longValue];
+    [PersistentHistory addHistoryWithType:item.type Keyword:item.keyword Id:hId Timestamp: [[NSDate date] timeIntervalSince1970]];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

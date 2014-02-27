@@ -22,17 +22,23 @@
 		6686A11318BC6F9600CFE2F4 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11218BC6F9600CFE2F4 /* LocationCell.m */; };
 		6686A11918BC729000CFE2F4 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11818BC729000CFE2F4 /* Base64.m */; };
 		6686A11C18BC76AB00CFE2F4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */; };
+		668A0FB118BF0DB200BF1521 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A0FB018BF0DB200BF1521 /* HistoryCell.m */; };
 		668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115B18B98FED00EC6351 /* QueryHandler.m */; };
 		668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A115E18B99A3400EC6351 /* ProximityViewController.m */; };
 		668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A116118B99A4C00EC6351 /* HistoryViewController.m */; };
 		668A116418B9ACA100EC6351 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668A116318B9ACA100EC6351 /* CoreLocation.framework */; };
 		668A116818B9B04100EC6351 /* LocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A116718B9B04100EC6351 /* LocationProvider.m */; };
+		668A12E718BD708D0004095C /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 668A12E418BD708D0004095C /* history.png */; };
+		668A12E818BD708D0004095C /* takeatour.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 668A12E518BD708D0004095C /* takeatour.jpg */; };
+		668A12E918BD708D0004095C /* whatsnear.png in Resources */ = {isa = PBXBuildFile; fileRef = 668A12E618BD708D0004095C /* whatsnear.png */; };
 		668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 668BDF8918A898B500228375 /* NetworkDispatcher.m */; };
+		668F162E18BEC872008F3460 /* PersistentHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F162D18BEC872008F3460 /* PersistentHistory.m */; };
 		66903EC6189F98550053808D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC1189F98550053808D /* History.m */; };
 		66903EC7189F98550053808D /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC3189F98550053808D /* LocationPoint.m */; };
 		66903EC8189F98550053808D /* TourPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66903EC5189F98550053808D /* TourPointInfo.m */; };
 		6690AF0618B84E4200956B10 /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6690AF0518B84E4200956B10 /* TourViewController.m */; };
 		6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692866518A9B36E00313C95 /* Storyboard.storyboard */; };
+		66C0E76218BEFD100090182D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C0E76118BEFD100090182D /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,8 @@
 		6686A11818BC729000CFE2F4 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		6686A11A18BC76AA00CFE2F4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ViewControllers/SearchViewController.h; sourceTree = "<group>"; };
 		6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ViewControllers/SearchViewController.m; sourceTree = "<group>"; };
+		668A0FAF18BF0DB200BF1521 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryCell.h; path = ViewControllers/HistoryCell.h; sourceTree = "<group>"; };
+		668A0FB018BF0DB200BF1521 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryCell.m; path = ViewControllers/HistoryCell.m; sourceTree = "<group>"; };
 		668A115A18B98FED00EC6351 /* QueryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryHandler.h; sourceTree = "<group>"; };
 		668A115B18B98FED00EC6351 /* QueryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryHandler.m; sourceTree = "<group>"; };
 		668A115D18B99A3300EC6351 /* ProximityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProximityViewController.h; path = ViewControllers/ProximityViewController.h; sourceTree = "<group>"; };
@@ -77,8 +85,13 @@
 		668A116318B9ACA100EC6351 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		668A116618B9B04100EC6351 /* LocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationProvider.h; path = LocationProvider/LocationProvider.h; sourceTree = "<group>"; };
 		668A116718B9B04100EC6351 /* LocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationProvider.m; path = LocationProvider/LocationProvider.m; sourceTree = "<group>"; };
+		668A12E418BD708D0004095C /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
+		668A12E518BD708D0004095C /* takeatour.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = takeatour.jpg; sourceTree = "<group>"; };
+		668A12E618BD708D0004095C /* whatsnear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsnear.png; sourceTree = "<group>"; };
 		668BDF8818A898B500228375 /* NetworkDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDispatcher.h; sourceTree = "<group>"; };
 		668BDF8918A898B500228375 /* NetworkDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDispatcher.m; sourceTree = "<group>"; };
+		668F162C18BEC872008F3460 /* PersistentHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentHistory.h; sourceTree = "<group>"; };
+		668F162D18BEC872008F3460 /* PersistentHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentHistory.m; sourceTree = "<group>"; };
 		66903EC0189F98550053808D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		66903EC1189F98550053808D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		66903EC2189F98550053808D /* LocationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPoint.h; sourceTree = "<group>"; };
@@ -88,6 +101,7 @@
 		6690AF0418B84E4200956B10 /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TourViewController.h; path = ViewControllers/TourViewController.h; sourceTree = "<group>"; };
 		6690AF0518B84E4200956B10 /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TourViewController.m; path = ViewControllers/TourViewController.m; sourceTree = "<group>"; };
 		6692866518A9B36E00313C95 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		66C0E76118BEFD100090182D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C0E76218BEFD100090182D /* MapKit.framework in Frameworks */,
 				668A116418B9ACA100EC6351 /* CoreLocation.framework in Frameworks */,
 				4157ABA1189F16AE00739348 /* CoreGraphics.framework in Frameworks */,
 				4157ABA3189F16AE00739348 /* UIKit.framework in Frameworks */,
@@ -118,6 +133,7 @@
 		4157AB92189F16AE00739348 = {
 			isa = PBXGroup;
 			children = (
+				66C0E76118BEFD100090182D /* MapKit.framework */,
 				668A116318B9ACA100EC6351 /* CoreLocation.framework */,
 				4157ABA4189F16AE00739348 /* LearnUCI */,
 				4157ABBD189F16AF00739348 /* LearnUCITests */,
@@ -149,6 +165,7 @@
 		4157ABA4189F16AE00739348 /* LearnUCI */ = {
 			isa = PBXGroup;
 			children = (
+				668A12E318BD708D0004095C /* res */,
 				668A116518B9B01C00EC6351 /* LocationProvider */,
 				6690AF0018B84C4900956B10 /* ViewControllers */,
 				668BDF8718A898B500228375 /* NetworkDisptacher */,
@@ -200,6 +217,16 @@
 			name = LocationProvider;
 			sourceTree = "<group>";
 		};
+		668A12E318BD708D0004095C /* res */ = {
+			isa = PBXGroup;
+			children = (
+				668A12E418BD708D0004095C /* history.png */,
+				668A12E518BD708D0004095C /* takeatour.jpg */,
+				668A12E618BD708D0004095C /* whatsnear.png */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
 		668BDF8718A898B500228375 /* NetworkDisptacher */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +249,8 @@
 				66903EC5189F98550053808D /* TourPointInfo.m */,
 				6686A11718BC729000CFE2F4 /* Base64.h */,
 				6686A11818BC729000CFE2F4 /* Base64.m */,
+				668F162C18BEC872008F3460 /* PersistentHistory.h */,
+				668F162D18BEC872008F3460 /* PersistentHistory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +268,8 @@
 				6686A11218BC6F9600CFE2F4 /* LocationCell.m */,
 				6686A11A18BC76AA00CFE2F4 /* SearchViewController.h */,
 				6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */,
+				668A0FAF18BF0DB200BF1521 /* HistoryCell.h */,
+				668A0FB018BF0DB200BF1521 /* HistoryCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -321,6 +352,9 @@
 				4157ABA9189F16AE00739348 /* InfoPlist.strings in Resources */,
 				4157ABB1189F16AF00739348 /* Images.xcassets in Resources */,
 				6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */,
+				668A12E718BD708D0004095C /* history.png in Resources */,
+				668A12E818BD708D0004095C /* takeatour.jpg in Resources */,
+				668A12E918BD708D0004095C /* whatsnear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +387,8 @@
 				6686A11318BC6F9600CFE2F4 /* LocationCell.m in Sources */,
 				6686A11918BC729000CFE2F4 /* Base64.m in Sources */,
 				6686A11C18BC76AB00CFE2F4 /* SearchViewController.m in Sources */,
+				668F162E18BEC872008F3460 /* PersistentHistory.m in Sources */,
+				668A0FB118BF0DB200BF1521 /* HistoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

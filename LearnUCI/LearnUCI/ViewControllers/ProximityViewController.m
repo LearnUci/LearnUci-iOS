@@ -12,6 +12,7 @@
 #import "QueryHandler.h"
 #import "ProximityViewController.h"
 #import "LocationProvider.h"
+#import "PersistentHistory.h"
 
 @interface ProximityViewController ()
 
@@ -33,8 +34,9 @@ UIActivityIndicatorView* loading;
 {
     [super viewDidLoad];
     [[LocationProvider instance] AskStartLocationManager];
+    CGRect rect = [self.view frame];
     loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loading.center = CGPointMake(160, 240);
+    loading.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     loading.hidesWhenStopped = YES;
     [self.view addSubview:loading];
     [loading startAnimating];
@@ -130,6 +132,8 @@ UIActivityIndicatorView* loading;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    LocationPoint* pt = [self.values objectAtIndex:indexPath.row];
+    [PersistentHistory addHistoryWithType:[PersistentHistory Location] Keyword:pt.name Id: pt.locationPointId Timestamp:[[NSDate date] timeIntervalSince1970]];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

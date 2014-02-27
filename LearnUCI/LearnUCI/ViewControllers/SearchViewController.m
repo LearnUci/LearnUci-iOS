@@ -10,6 +10,7 @@
 #import "LocationCell.h"
 #import "SearchViewController.h"
 #import "QueryHandler.h"
+#import "PersistentHistory.h"
 
 @interface SearchViewController ()
 
@@ -113,6 +114,8 @@ UIActivityIndicatorView* loading;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    LocationPoint* pt = [self.arr objectAtIndex:indexPath.row];
+    [PersistentHistory addHistoryWithType:[PersistentHistory Location] Keyword:pt.name Id: pt.locationPointId Timestamp:[[NSDate date] timeIntervalSince1970]];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -137,13 +140,15 @@ UIActivityIndicatorView* loading;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    CGRect rect = [self.view frame];
     loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loading.center = CGPointMake(160, 240);
+    loading.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     loading.hidesWhenStopped = YES;
     [self.view addSubview:loading];
     [loading startAnimating];
     [NSThread detachNewThreadSelector:@selector(asyncLoad:) toTarget:self withObject:searchBar.text];
     [searchBar resignFirstResponder];
+    [PersistentHistory addHistoryWithType:[PersistentHistory Search] Keyword:searchBar.text Id:0 Timestamp:[[NSDate date] timeIntervalSince1970]];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {

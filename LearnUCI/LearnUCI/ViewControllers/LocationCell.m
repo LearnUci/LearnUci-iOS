@@ -27,11 +27,10 @@
 }
 
 
-+ (void)SetLocationCell:(id)cell WithLocation:(NSString*)location AndImage:(NSData*)img {
-    LocationCell* lc = (LocationCell*) cell;
-    lc.location.text = location;
++ (void)SetLocationCell:(LocationCell*)cell WithLocation:(NSString*)location AndImage:(NSData*)img {
+    cell.location.text = location;
     if (img != nil) {
-        lc.image.image = [UIImage imageWithData:img];
+        cell.image.image = [UIImage imageWithData:img];
     }
 }
 
