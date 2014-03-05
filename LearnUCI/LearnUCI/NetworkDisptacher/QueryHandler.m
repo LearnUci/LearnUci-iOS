@@ -98,7 +98,13 @@ NSString* TYPE_ID = @"id";
     if (arr == nil) {
         //maybe id wasn't a location id, but rather a tour id
         return [QueryHandler GetLocationsFromTour:locId];
+    }else{
+        NSMutableArray* res = [NSMutableArray array];
+        for (int i = 0; i < [arr count]; i++) {
+            [res addObject:[[LocationPoint alloc] initWithJson:[arr objectAtIndex:i]]];
+        }
+        return res;
     }
-    return arr;
+    return nil;
 }
 @end

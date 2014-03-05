@@ -7,6 +7,7 @@
 //
 
 #import "TourMapViewController.h"
+#import "LocationPoint.h"
 
 @interface TourMapViewController ()
 
@@ -36,10 +37,13 @@
     _mapView.mapType = MKMapTypeHybrid;
     
     NSLog([@(_tourPoints.count) stringValue]);
+    LocationPoint* lp = _tourPoints[0];
+    NSLog([@(lp.latitude) stringValue]);
 }
 
 - (void)didReceiveMemoryWarning
 {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
