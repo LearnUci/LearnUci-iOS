@@ -13,7 +13,7 @@
     _name = [obj objectForKey:@"name"];
     _abbreviation = [obj objectForKey:@"abbr"];
     _type = [obj objectForKey:@"type"];
-    _locationPointId = [[obj objectForKey:@"id"] longValue];
+    _locationPointId = [[obj objectForKey:@"id"] longLongValue];
     _description = [obj objectForKey:@"desc"];
     _image = [Base64 base64DataFromString: [obj objectForKey:@"img"]];
     _latitude = (0.120246f * tempLat) + (-0.0460953f * tempLng) + 24.1819f;

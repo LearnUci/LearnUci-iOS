@@ -144,6 +144,7 @@ UIActivityIndicatorView* loading;
      */
 }
 
+//send data over to TourMap view controller
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"TourMapView"])

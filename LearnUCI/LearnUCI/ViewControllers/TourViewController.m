@@ -133,6 +133,7 @@ UIActivityIndicatorView* loading;
     [PersistentHistory addHistoryWithType:[PersistentHistory Tour] Keyword:tour.name Id: tour.tourPointId Timestamp:[[NSDate date] timeIntervalSince1970]];
 }
 
+//send data over to TourMap view controller
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"TourMapView"])

@@ -10,6 +10,8 @@
 #import "History.h"
 #import "HistoryCell.h"
 #import "PersistentHistory.h"
+#import "TourMapViewController.h"
+#import "QueryHandler.h"
 
 @interface HistoryViewController ()
 
@@ -128,6 +130,21 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+//send data over to TourMap view controller
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"TourMapView"])
+    {
+        TourMapViewController *tourMapVC = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        long row = [myIndexPath row];
+        History* item = [self.values objectAtIndex:row];
+        NSArray* lps = [QueryHandler GetLocationsFromId: [item.historyId longLongValue]];
+        tourMapVC.tourPoints = lps;
+    }
 }
 
 @end

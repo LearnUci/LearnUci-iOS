@@ -21,6 +21,8 @@ NSString* ACTION_TOUR = @"TOURS";
 NSString* ACTION_SEARCH = @"SEARCH";
 NSString* ACTION_PROXIMITY = @"PROXIMITY";
 NSString* ACTION_EXPAND_TOUR = @"EXPAND_TOUR";
+NSString* ACTION_MATCH_ID = @"MATCH";
+NSString* TYPE_ID = @"id";
 
 + (NSArray*) ToJsonObject:(NSString*) str {
     NSError* err;
@@ -70,8 +72,8 @@ NSString* ACTION_EXPAND_TOUR = @"EXPAND_TOUR";
     return res;
 }
 
-//EXPAND_TOUR
-//ID
+//Input: unique tour id from TourViewController
+//Output: List of LocationPoint objects
 + (NSArray*) GetLocationsFromTour:(long long)tourId {
     NSMutableArray* res = [NSMutableArray array];
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
@@ -83,5 +85,20 @@ NSString* ACTION_EXPAND_TOUR = @"EXPAND_TOUR";
         [res addObject:[[LocationPoint alloc] initWithJson:[arr objectAtIndex:i]]];
     }
     return res;
+}
+
+//takes a location or tour id and returns locations
++ (NSArray*)  GetLocationsFromId:(long long)locId {
+    //http://learnuci.appspot.com/query?action=MATCH&value=5079606281371648&type=id
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    [dict setValue:ACTION_MATCH_ID forKey:@"action"];
+    [dict setValue:[@(locId) stringValue] forKey:@"value"];
+    [dict setValue:TYPE_ID forKey:@"type"];
+    NSArray* arr = [QueryHandler ToJsonObject: [NetworkDispatcher getRequest:dict WithUrl:PATH]];
+    if (arr == nil) {
+        //maybe id wasn't a location id, but rather a tour id
+        return [QueryHandler GetLocationsFromTour:locId];
+    }
+    return arr;
 }
 @end
