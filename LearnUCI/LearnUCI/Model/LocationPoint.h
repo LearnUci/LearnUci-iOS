@@ -9,7 +9,7 @@
 @property (copy, readonly) NSString* type;
 @property (copy, readonly) NSString* description;
 @property (copy, readonly) NSData* image;
-@property (readonly) long locationPointId;
+@property (readonly) long long locationPointId;
 
 - (BOOL) hasImage;
 - (BOOL) hasDescription;

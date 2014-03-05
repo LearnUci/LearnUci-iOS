@@ -11,7 +11,7 @@
 
 @interface PersistentHistory : NSObject
 + (NSArray*) getHistory;
-+ (void) addHistoryWithType:(NSString*)type Keyword:(NSString*)keyword Id:(long)historyId Timestamp:(long)timestamp;
++ (void) addHistoryWithType:(NSString*)type Keyword:(NSString*)keyword Id:(long long)historyId Timestamp:(long)timestamp;
 
 + (NSString*) Tour;
 + (NSString*) Search;

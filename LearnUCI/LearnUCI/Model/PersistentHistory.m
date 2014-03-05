@@ -57,13 +57,13 @@ static NSString* LOCATION = @"Location";
     return res;
 }
 
-+ (void) addHistoryWithType:(NSString*)type Keyword:(NSString*)keyword Id:(long)historyId Timestamp:(long)timestamp {
++ (void) addHistoryWithType:(NSString*)type Keyword:(NSString*)keyword Id:(long long)historyId Timestamp:(long)timestamp {
     if (arr == nil) {
         arr = [NSMutableArray array];
     }
     History* history = [[History alloc] initWithType:type
                         WithKeyword:keyword
-                        WithId:[NSString stringWithFormat:@"%ld", historyId]
+                        WithId:[NSString stringWithFormat:@"%lld", historyId]
                         WithTimestamp:[NSString stringWithFormat:@"%ld", timestamp]];
     [arr addObject:history];
     // Trim off to keep a max of 100 elements in history

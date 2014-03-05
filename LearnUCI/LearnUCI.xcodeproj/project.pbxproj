@@ -39,6 +39,7 @@
 		6690AF0618B84E4200956B10 /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6690AF0518B84E4200956B10 /* TourViewController.m */; };
 		6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692866518A9B36E00313C95 /* Storyboard.storyboard */; };
 		66C0E76218BEFD100090182D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C0E76118BEFD100090182D /* MapKit.framework */; };
+		9A40C69418C3D5FC00D5877A /* TourMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A40C69218C3D5FC00D5877A /* TourMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		6690AF0518B84E4200956B10 /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TourViewController.m; path = ViewControllers/TourViewController.m; sourceTree = "<group>"; };
 		6692866518A9B36E00313C95 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		66C0E76118BEFD100090182D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9A40C69118C3D5FC00D5877A /* TourMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourMapViewController.h; sourceTree = "<group>"; };
+		9A40C69218C3D5FC00D5877A /* TourMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 				6686A11B18BC76AB00CFE2F4 /* SearchViewController.m */,
 				668A0FAF18BF0DB200BF1521 /* HistoryCell.h */,
 				668A0FB018BF0DB200BF1521 /* HistoryCell.m */,
+				9A40C69118C3D5FC00D5877A /* TourMapViewController.h */,
+				9A40C69218C3D5FC00D5877A /* TourMapViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				668BDF8A18A898B500228375 /* NetworkDispatcher.m in Sources */,
 				6690AF0618B84E4200956B10 /* TourViewController.m in Sources */,
 				668A115C18B98FED00EC6351 /* QueryHandler.m in Sources */,
+				9A40C69418C3D5FC00D5877A /* TourMapViewController.m in Sources */,
 				668A115F18B99A3400EC6351 /* ProximityViewController.m in Sources */,
 				668A116218B99A4C00EC6351 /* HistoryViewController.m in Sources */,
 				668A116818B9B04100EC6351 /* LocationProvider.m in Sources */,

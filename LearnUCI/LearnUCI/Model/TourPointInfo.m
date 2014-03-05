@@ -12,7 +12,7 @@
         _name = [obj objectForKey:@"name"];
         _description = [obj objectForKey:@"desc"];
         _image = [Base64 base64DataFromString: [obj objectForKey:@"img"]];
-        _tourPointId = [[obj objectForKey:@"id"] longValue];
+        _tourPointId = [[obj objectForKey:@"id"] longLongValue];
         _locationPoints = [obj objectForKey:@"points"];
         _locIds = [NSArray array];
     }

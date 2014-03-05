@@ -13,6 +13,7 @@
 #import "ProximityViewController.h"
 #import "LocationProvider.h"
 #import "PersistentHistory.h"
+#import "TourMapViewController.h"
 
 @interface ProximityViewController ()
 
@@ -141,6 +142,20 @@ UIActivityIndicatorView* loading;
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"TourMapView"])
+    {
+        TourMapViewController *tourMapVC = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        long row = [myIndexPath row];
+        LocationPoint* pt = [self.values objectAtIndex:row];
+        
+        tourMapVC.tourPoints = @[pt];
+    }
 }
 
 

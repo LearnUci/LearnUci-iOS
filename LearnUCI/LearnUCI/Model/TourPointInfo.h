@@ -5,7 +5,7 @@
 @property (copy) NSString* name;
 @property (copy) NSString* description;
 @property (copy) NSData* image;
-@property (readonly) long tourPointId;
+@property (readonly) long long tourPointId;
 @property (copy) NSArray* locationPoints;
 
 - (id)initWithJson:(NSDictionary*)obj;

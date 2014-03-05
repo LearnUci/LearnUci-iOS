@@ -11,6 +11,7 @@
 #import "TourPointInfo.h"
 #import "QueryHandler.h"
 #import "PersistentHistory.h"
+#import "TourMapViewController.h"
 
 @interface TourViewController ()
 @end
@@ -130,13 +131,23 @@ UIActivityIndicatorView* loading;
 {
     TourPointInfo* tour = [self.values objectAtIndex:indexPath.row];
     [PersistentHistory addHistoryWithType:[PersistentHistory Tour] Keyword:tour.name Id: tour.tourPointId Timestamp:[[NSDate date] timeIntervalSince1970]];
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"TourMapView"])
+    {
+        TourMapViewController *tourMapVC = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        long row = [myIndexPath row];
+        TourPointInfo* tour = [self.values objectAtIndex:row];
+        
+        NSArray *locationPoints = [QueryHandler GetLocationsFromTour:tour.tourPointId];
+        
+        tourMapVC.tourPoints = locationPoints;
+    }
+}
+
 
 @end

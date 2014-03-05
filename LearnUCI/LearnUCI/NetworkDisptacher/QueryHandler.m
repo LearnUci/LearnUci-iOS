@@ -20,6 +20,7 @@ NSString* PATH = @"http://learnuci.appspot.com/query";
 NSString* ACTION_TOUR = @"TOURS";
 NSString* ACTION_SEARCH = @"SEARCH";
 NSString* ACTION_PROXIMITY = @"PROXIMITY";
+NSString* ACTION_EXPAND_TOUR = @"EXPAND_TOUR";
 
 + (NSArray*) ToJsonObject:(NSString*) str {
     NSError* err;
@@ -28,6 +29,7 @@ NSString* ACTION_PROXIMITY = @"PROXIMITY";
                                 error:&err];
 }
 
+//Gets a list of all Tours
 + (NSArray*) GetTours {
     NSMutableArray* res = [NSMutableArray array];
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
@@ -39,6 +41,8 @@ NSString* ACTION_PROXIMITY = @"PROXIMITY";
     return res;
 }
 
+//Input: User text input
+//Output: Result Set of Location Points
 + (NSArray*) Search:(NSString*)query {
     NSMutableArray* res = [NSMutableArray array];
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
@@ -51,6 +55,8 @@ NSString* ACTION_PROXIMITY = @"PROXIMITY";
     return res;
 }
 
+//Input: User GPS coord
+//Output: Result Set of nearby Location Points
 + (NSArray*) ProximityOfLat:(double)lat Lng:(double)lng {
     NSString* jsonString = [NSString stringWithFormat:@"{\"latitude\":%f,\"longitude\":%f}", lat, lng];
     NSMutableArray* res = [NSMutableArray array];
@@ -61,5 +67,21 @@ NSString* ACTION_PROXIMITY = @"PROXIMITY";
     for (int i = 0; i < [arr count]; i++) {
         [res addObject:[[LocationPoint alloc] initWithJson:[arr objectAtIndex:i]]];
     }
-    return res;}
+    return res;
+}
+
+//EXPAND_TOUR
+//ID
++ (NSArray*) GetLocationsFromTour:(long long)tourId {
+    NSMutableArray* res = [NSMutableArray array];
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    [dict setValue:ACTION_EXPAND_TOUR forKey:@"action"];
+    [dict setValue:[@(tourId) stringValue] forKey:@"value"];
+    NSArray* arr = [QueryHandler ToJsonObject: [NetworkDispatcher getRequest:dict WithUrl:PATH]];
+
+    for (int i = 0; i < [arr count]; i++) {
+        [res addObject:[[LocationPoint alloc] initWithJson:[arr objectAtIndex:i]]];
+    }
+    return res;
+}
 @end
