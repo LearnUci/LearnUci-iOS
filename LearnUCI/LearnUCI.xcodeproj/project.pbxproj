@@ -40,6 +40,7 @@
 		6692866618A9B36E00313C95 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692866518A9B36E00313C95 /* Storyboard.storyboard */; };
 		66C0E76218BEFD100090182D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C0E76118BEFD100090182D /* MapKit.framework */; };
 		9A40C69418C3D5FC00D5877A /* TourMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A40C69218C3D5FC00D5877A /* TourMapViewController.m */; };
+		9AAC237A18C874A7002C34D6 /* UIAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAC237918C874A7002C34D6 /* UIAlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		66C0E76118BEFD100090182D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9A40C69118C3D5FC00D5877A /* TourMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourMapViewController.h; sourceTree = "<group>"; };
 		9A40C69218C3D5FC00D5877A /* TourMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourMapViewController.m; sourceTree = "<group>"; };
+		9AAC237818C874A7002C34D6 /* UIAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIAlertViewController.h; path = ViewControllers/UIAlertViewController.h; sourceTree = "<group>"; };
+		9AAC237918C874A7002C34D6 /* UIAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIAlertViewController.m; path = ViewControllers/UIAlertViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,8 @@
 				668A0FB018BF0DB200BF1521 /* HistoryCell.m */,
 				9A40C69118C3D5FC00D5877A /* TourMapViewController.h */,
 				9A40C69218C3D5FC00D5877A /* TourMapViewController.m */,
+				9AAC237818C874A7002C34D6 /* UIAlertViewController.h */,
+				9AAC237918C874A7002C34D6 /* UIAlertViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				6686A11318BC6F9600CFE2F4 /* LocationCell.m in Sources */,
 				6686A11918BC729000CFE2F4 /* Base64.m in Sources */,
 				6686A11C18BC76AB00CFE2F4 /* SearchViewController.m in Sources */,
+				9AAC237A18C874A7002C34D6 /* UIAlertViewController.m in Sources */,
 				668F162E18BEC872008F3460 /* PersistentHistory.m in Sources */,
 				668A0FB118BF0DB200BF1521 /* HistoryCell.m in Sources */,
 			);
