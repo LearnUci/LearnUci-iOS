@@ -11,6 +11,9 @@
 #import "SearchViewController.h"
 #import "QueryHandler.h"
 #import "PersistentHistory.h"
+#import "TourMapViewController.h"
+#import "TourPointInfo.h"
+
 
 @interface SearchViewController ()
 
@@ -158,5 +161,22 @@ UIActivityIndicatorView* loading;
 
 @synthesize arr = _arr;
 @synthesize searchBar = _searchBar;
+
+//send data over to TourMap view controller
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"TourMapView"])
+    {
+        TourMapViewController *tourMapVC = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        long row = [myIndexPath row];
+        
+        LocationPoint* pt = [self.arr objectAtIndex:row];
+        
+        tourMapVC.tourPoints = @[pt];
+    }
+}
+
 
 @end
