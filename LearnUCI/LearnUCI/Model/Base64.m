@@ -1,11 +1,3 @@
-//
-//  Base64.m
-//  LearnUCI
-//
-//  Created by Yuhao Ma on 2/24/14.
-//  Copyright (c) 2014 gbc. All rights reserved.
-//
-
 #import "Base64.h"
 
 @implementation Base64
