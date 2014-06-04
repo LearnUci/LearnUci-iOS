@@ -108,6 +108,19 @@
 		9A40C69218C3D5FC00D5877A /* TourMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourMapViewController.m; sourceTree = "<group>"; };
 		9AAC237818C874A7002C34D6 /* UIAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIAlertViewController.h; path = ViewControllers/UIAlertViewController.h; sourceTree = "<group>"; };
 		9AAC237918C874A7002C34D6 /* UIAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIAlertViewController.m; path = ViewControllers/UIAlertViewController.m; sourceTree = "<group>"; };
+		9ABD86C0193EC68800D6266A /* iphoneretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoneretina.png; sourceTree = "<group>"; };
+		9ABD86C1193EC69F00D6266A /* ipadNonRetinaApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadNonRetinaApp.png; sourceTree = "<group>"; };
+		9ABD86C2193EC6B000D6266A /* ipadRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadRetina.png; sourceTree = "<group>"; };
+		9ABD86C3193EC6D000D6266A /* ipadNonRetinaSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadNonRetinaSettings.png; sourceTree = "<group>"; };
+		9ABD86C4193EC6EC00D6266A /* iphoneRetinaSpotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoneRetinaSpotlight.png; sourceTree = "<group>"; };
+		9ABD86C5193EC72700D6266A /* ipadNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadNonRetina.png; sourceTree = "<group>"; };
+		9ABD86C6193EC73C00D6266A /* ipadretinaSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadretinaSettings.png; sourceTree = "<group>"; };
+		9ABD86C7193ECAAD00D6266A /* splashRetinaiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPhone.png; sourceTree = "<group>"; };
+		9ABD86C8193ECABF00D6266A /* splashRetinaiPhone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPhone4.png; sourceTree = "<group>"; };
+		9ABD86C9193ECAD600D6266A /* splashRetinaiPadPortraitNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPadPortraitNonRetina.png; sourceTree = "<group>"; };
+		9ABD86CA193ECAFB00D6266A /* splashRetinaiPadLandscapeNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPadLandscapeNonRetina.png; sourceTree = "<group>"; };
+		9ABD86CB193ECB2300D6266A /* splashRetinaiPadPortraitRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPadPortraitRetina.png; sourceTree = "<group>"; };
+		9ABD86CC193ECB3000D6266A /* splashRetinaiPadLandscapeRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashRetinaiPadLandscapeRetina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +152,19 @@
 		4157AB92189F16AE00739348 = {
 			isa = PBXGroup;
 			children = (
+				9ABD86CC193ECB3000D6266A /* splashRetinaiPadLandscapeRetina.png */,
+				9ABD86CB193ECB2300D6266A /* splashRetinaiPadPortraitRetina.png */,
+				9ABD86CA193ECAFB00D6266A /* splashRetinaiPadLandscapeNonRetina.png */,
+				9ABD86C9193ECAD600D6266A /* splashRetinaiPadPortraitNonRetina.png */,
+				9ABD86C8193ECABF00D6266A /* splashRetinaiPhone4.png */,
+				9ABD86C7193ECAAD00D6266A /* splashRetinaiPhone.png */,
+				9ABD86C6193EC73C00D6266A /* ipadretinaSettings.png */,
+				9ABD86C5193EC72700D6266A /* ipadNonRetina.png */,
+				9ABD86C4193EC6EC00D6266A /* iphoneRetinaSpotlight.png */,
+				9ABD86C3193EC6D000D6266A /* ipadNonRetinaSettings.png */,
+				9ABD86C2193EC6B000D6266A /* ipadRetina.png */,
+				9ABD86C1193EC69F00D6266A /* ipadNonRetinaApp.png */,
+				9ABD86C0193EC68800D6266A /* iphoneretina.png */,
 				66C0E76118BEFD100090182D /* MapKit.framework */,
 				668A116318B9ACA100EC6351 /* CoreLocation.framework */,
 				4157ABA4189F16AE00739348 /* LearnUCI */,
@@ -520,8 +546,8 @@
 		4157ABC8189F16AF00739348 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -538,8 +564,8 @@
 		4157ABC9189F16AF00739348 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

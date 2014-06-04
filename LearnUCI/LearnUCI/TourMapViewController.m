@@ -9,6 +9,7 @@
 #import "TourMapViewController.h"
 #import "LocationPoint.h"
 #import "UIAlertViewController.h"
+#import "LocationProvider.h"
 
 @interface TourMapViewController ()
 
@@ -39,9 +40,29 @@
     self.mapView.delegate = self;
     //set to -1 since we increment it in the method
     self.currLocationIndex = -1;
+
     
     [self getAndSetNextAnnotation];
     
+    [[LocationProvider instance] AskStartLocationManager];
+    [NSThread detachNewThreadSelector:@selector(checkLocation) toTarget:self withObject:nil];
+}
+
+- (void) checkLocation {
+    while(true){
+        CLLocationCoordinate2D currentLocation = [[LocationProvider instance] coordinate];
+        LocationPoint* lp1 = _tourPoints[self.currLocationIndex];
+    
+        CLLocation* cl1 = [[CLLocation alloc ] initWithLatitude:lp1.latitude longitude:lp1.longitude];
+        CLLocation* cl2 = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
+    
+        CLLocationDistance distance = [cl1 distanceFromLocation:cl2];
+
+        if(distance < 75){
+            [self.mapView selectAnnotation:self.currAnnotation  animated:YES];
+        }
+        [NSThread sleepForTimeInterval:5];
+    }
 }
 
 - (void)getAndSetNextAnnotation {
@@ -75,7 +96,6 @@
         [self.mapView removeAnnotation:_currAnnotation];
     }
     [self.mapView addAnnotation:annotation];
-    [self.mapView selectAnnotation:annotation animated:YES];
     self.currAnnotation = annotation;
 }
 
@@ -135,9 +155,11 @@
 
 
 //USE THIS TO CHECK USER PROXIMITY TO LOCATION LATER
-//-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-//    [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
-//}
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    //[self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+
+        
+}
 
 - (void)didReceiveMemoryWarning
 {

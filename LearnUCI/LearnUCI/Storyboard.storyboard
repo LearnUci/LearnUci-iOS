@@ -316,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLX-vw-2Y3">
-                                <rect key="frame" x="75" y="77" width="171" height="44"/>
+                                <rect key="frame" x="20" y="77" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Tours">
@@ -331,7 +331,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2at-VX-K3S">
-                                <rect key="frame" x="75" y="128" width="171" height="44"/>
+                                <rect key="frame" x="20" y="128" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="What's Near Me">
@@ -346,7 +346,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVv-i2-Ujf">
-                                <rect key="frame" x="75" y="179" width="171" height="44"/>
+                                <rect key="frame" x="20" y="179" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="History">
@@ -363,15 +363,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cLX-vw-2Y3" firstAttribute="leading" secondItem="IWF-oD-Cuq" secondAttribute="leading" constant="75" id="1cL-B1-tT0"/>
-                            <constraint firstItem="cLX-vw-2Y3" firstAttribute="centerX" secondItem="IWF-oD-Cuq" secondAttribute="centerX" type="default" id="5qr-Um-0tC"/>
-                            <constraint firstItem="cLX-vw-2Y3" firstAttribute="trailing" secondItem="2at-VX-K3S" secondAttribute="trailing" type="default" id="7Qb-re-E0b"/>
-                            <constraint firstItem="2at-VX-K3S" firstAttribute="leading" secondItem="QVv-i2-Ujf" secondAttribute="leading" type="default" id="Stl-z6-joa"/>
-                            <constraint firstItem="2at-VX-K3S" firstAttribute="trailing" secondItem="QVv-i2-Ujf" secondAttribute="trailing" type="default" id="aJ9-35-Cdn"/>
+                            <constraint firstItem="QVv-i2-Ujf" firstAttribute="trailing" secondItem="2at-VX-K3S" secondAttribute="trailing" type="default" id="LHA-Ww-HX2"/>
+                            <constraint firstAttribute="trailing" secondItem="cLX-vw-2Y3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NwW-3v-Zpf"/>
+                            <constraint firstItem="cLX-vw-2Y3" firstAttribute="leading" secondItem="IWF-oD-Cuq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="U00-Jy-XkN"/>
                             <constraint firstItem="2at-VX-K3S" firstAttribute="top" secondItem="cLX-vw-2Y3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ePP-My-t9J"/>
                             <constraint firstItem="QVv-i2-Ujf" firstAttribute="top" secondItem="2at-VX-K3S" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hk9-lB-nd1"/>
                             <constraint firstItem="cLX-vw-2Y3" firstAttribute="top" secondItem="IWF-oD-Cuq" secondAttribute="top" constant="77" id="mq5-tM-mQ9"/>
-                            <constraint firstItem="2at-VX-K3S" firstAttribute="leading" secondItem="cLX-vw-2Y3" secondAttribute="leading" type="default" id="oYa-iY-5Uc"/>
+                            <constraint firstItem="QVv-i2-Ujf" firstAttribute="leading" secondItem="2at-VX-K3S" secondAttribute="leading" type="default" id="sb9-SO-D8b"/>
+                            <constraint firstItem="2at-VX-K3S" firstAttribute="leading" secondItem="cLX-vw-2Y3" secondAttribute="leading" type="default" id="tR4-i4-lQz"/>
+                            <constraint firstItem="cLX-vw-2Y3" firstAttribute="trailing" secondItem="2at-VX-K3S" secondAttribute="trailing" type="default" id="uHC-XP-uqm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Learn UCI" id="d1v-Qd-QB7">
@@ -411,7 +411,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1s7-P3-37Q"/>
+        <segue reference="eRd-08-LsX"/>
         <segue reference="TPu-O0-Xau"/>
     </inferredMetricsTieBreakers>
 </document>
